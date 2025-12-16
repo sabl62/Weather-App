@@ -7,18 +7,106 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<!-- app start -->
+
 <body>
     <div class="container">
-        <div class="weather-main">
-            <input type="search" name="city" id="city-input" placeholder="City Name...">
-            <div id="isDay" class="weather-info"></div>
-            <div id="current" class="weather-info"></div>
-            <div id="temperature" class="weather-info"></div>
-            <button onclick="getWeather()">Get Weather</button>
+        <div class="nav-bar">
+            <h1> easy weather</h1>
+            <div class="nav-info-container">
+                
+                <div class="nav-info">
+                    <span>📍</span>
+                    <span id="currentLocation">Search a city</span>
+                </div>
+                <div class="nav-info">
+                    <span>🕐</span>
+                    <span id="time"></span>
+                </div>
+                <div class="nav-info">
+                    <span>📅</span>
+                    <span id="date"></span>
+                </div>
+                <div class="nav-info">
+                    <span id="day"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="search-section">
+            <div class="search-box">
+                <input type="search" id="city-input" placeholder="Enter city name...">
+                <button onclick="getWeather()">Search</button>
+                <button onclick="getCurrentLocation()" class="location-btn">
+                     Use My Location
+                </button>
+            </div>
+        </div>
+
+        <div class="loading" id="loading">
+            <p>🔍 Fetching weather data...</p>
+        </div>
+
+        <div class="error-message" id="error"></div>
+
+        <div id="weather-display" class="hidden">
+            <div class="main-weather-card animate-in">
+                <div class="location-name" id="locationName"></div>
+                <div class="weather-condition" id="weatherCondition"></div>
+
+                <div class="main-temp-display">
+                    <div class="weather-icon-large" id="mainIcon"></div>
+                    <div>
+                        <div class="temperature-large" id="mainTemp"></div>
+                        <div class="feels-like" id="feelsLike"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weather-grid">
+                <div class="weather-card animate-in">
+                    <div class="card-icon">💧</div>
+                    <div class="card-label">Humidity</div>
+                    <div class="card-value" id="humidity"></div>
+                </div>
+
+                <div class="weather-card animate-in">
+                    <div class="card-icon">💨</div>
+                    <div class="card-label">Wind</div>
+                    <div class="card-value" id="windSpeed"></div>
+                    <div class="card-subvalue" id="windDir"></div>
+                </div>
+
+                <div class="weather-card animate-in">
+                    <div class="card-icon">👁️</div>
+                    <div class="card-label">Visibility</div>
+                    <div class="card-value" id="visibility"></div>
+                </div>
+
+                <div class="weather-card animate-in">
+                    <div class="card-icon">🌡️</div>
+                    <div class="card-label">Pressure</div>
+                    <div class="card-value" id="pressure"></div>
+                </div>
+
+                <div class="weather-card animate-in">
+                    <div class="card-icon">☀️</div>
+                    <div class="card-label">UV Index</div>
+                    <div class="card-value" id="uvIndex"></div>
+                    <div class="card-subvalue" id="uvDescription"></div>
+                </div>
+
+                <div class="weather-card animate-in">
+                    <div class="card-icon">🌙</div>
+                    <div class="card-label">Time of Day</div>
+                    <div class="card-value" id="timeOfDay"></div>
+                </div>
+            </div>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <script src="script.js">
+        
+    </script>
 </body>
 
 </html>
